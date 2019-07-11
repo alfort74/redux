@@ -14,7 +14,8 @@ TodoList.propTypes = {
   filteredTodos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
   }).isRequired).isRequired,
   actions: PropTypes.object.isRequired
 }
