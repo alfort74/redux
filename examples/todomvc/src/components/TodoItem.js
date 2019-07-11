@@ -30,6 +30,10 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo, completeTodo, deleteTodo } = this.props
+    const printDate = (dateStr) => {
+      const date = new Date(dateStr)
+      return date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes()
+    }
 
     let element
     if (this.state.editing) {
@@ -37,7 +41,6 @@ export default class TodoItem extends Component {
         <TodoTextInput text={todo.text}
                        editing={this.state.editing}
                        onSave={(text) => this.handleSave(todo.id, text)} />
-                       // TODO: 日付を追加
       )
     } else {
       element = (
@@ -47,7 +50,7 @@ export default class TodoItem extends Component {
                  checked={todo.completed}
                  onChange={() => completeTodo(todo.id)} />
           <label onDoubleClick={this.handleDoubleClick}>
-            {todo.text} - {todo.date}
+            {todo.text} - {printDate(todo.date)}
           </label>
           <button className="destroy"
                   onClick={() => deleteTodo(todo.id)} />
