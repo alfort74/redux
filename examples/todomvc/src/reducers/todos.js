@@ -13,6 +13,12 @@ const initialState = [
     completed: false,
     id: 0,
     date: Date().toString()
+  },
+  {
+    text: 'Create App',
+    completed: false,
+    id: 1,
+    date: new Date('December 17, 2018 03:24:00').toString()
   }
 ]
 
