@@ -1,12 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FilterLink from '../containers/FilterLink'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import OrderLink from '../containers/OrderLink'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE, DESCENT_ORDER, ASCENT_ORDER } from '../constants/TodoFilters'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
   [SHOW_ACTIVE]: 'Active',
   [SHOW_COMPLETED]: 'Completed'
+}
+
+const ORDER_TITLES = {
+  [DESCENT_ORDER]: 'Desc',
+  [ASCENT_ORDER]: 'Asc'
 }
 
 const Footer = (props) => {
@@ -23,6 +29,13 @@ const Footer = (props) => {
             <FilterLink filter={filter}>
               {FILTER_TITLES[filter]}
             </FilterLink>
+          </li>
+        )}
+        {Object.keys(ORDER_TITLES).map(order =>
+          <li key={order}>
+            <OrderLink order={order}>
+              {ORDER_TITLES[order]}
+            </OrderLink>
           </li>
         )}
       </ul>

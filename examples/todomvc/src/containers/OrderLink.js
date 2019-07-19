@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
-import { setVisibilityFilter } from '../actions'
+import { setTaskOrder } from '../actions'
 import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.visibilityFilter.filter
+  active: ownProps.order === state.visibilityFilter.order
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setFunc: () => {
-    dispatch(setVisibilityFilter(ownProps.filter))
+    dispatch(setTaskOrder(ownProps.order))
   }
 })
 
