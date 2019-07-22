@@ -1,11 +1,25 @@
-import {
-  ADD_TODO,
-  DELETE_TODO,
-  EDIT_TODO,
-  COMPLETE_TODO,
-  COMPLETE_ALL_TODOS,
-  CLEAR_COMPLETED
-} from '../constants/ActionTypes'
+// Actions 
+
+const ADD_TODO = 'ADD_TODO'
+const DELETE_TODO = 'DELETE_TODO'
+const EDIT_TODO = 'EDIT_TODO'
+const COMPLETE_TODO = 'COMPLETE_TODO'
+const COMPLETE_ALL_TODOS = 'COMPLETE_ALL_TODOS'
+const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
+const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+
+// Action Creators
+
+export const addTodo = text => ({ type: ADD_TODO, text })
+export const deleteTodo = id => ({ type: DELETE_TODO, id })
+export const editTodo = (id, text) => ({ type: EDIT_TODO, id, text })
+export const completeTodo = id => ({ type: COMPLETE_TODO, id })
+export const completeAllTodos = () => ({ type: COMPLETE_ALL_TODOS })
+export const clearCompleted = () => ({ type: CLEAR_COMPLETED })
+export const setVisibilityFilter = filter => ({ type: SET_VISIBILITY_FILTER, filter})
+
+// Reducer
 
 const initialState = [
   {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import * as TodoActions from '../actions'
+import * as TodoActions from '../modules/todos'
 import { bindActionCreators } from 'redux'
 import MainSection from '../components/MainSection'
 import { getCompletedTodoCount } from '../selectors'

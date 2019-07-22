@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as TodoActions from '../actions'
+import * as TodoActions from '../modules/todos'
 import TodoList from '../components/TodoList'
 import { getVisibleTodos } from '../selectors'
 
