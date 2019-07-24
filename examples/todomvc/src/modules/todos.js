@@ -25,7 +25,8 @@ const initialState = [
   {
     text: 'Use Redux',
     completed: false,
-    id: 0
+    id: 0,
+    date: Date().toString()
   }
 ]
 
@@ -37,7 +38,8 @@ export default function todos(state = initialState, action) {
         {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
           completed: false,
-          text: action.text
+          text: action.text,
+          date: Date().toString()
         }
       ]
 
@@ -49,7 +51,7 @@ export default function todos(state = initialState, action) {
     case EDIT_TODO:
       return state.map(todo =>
         todo.id === action.id ?
-          { ...todo, text: action.text } :
+          { ...todo, text: action.text, date: Date().toString() } :
           todo
       )
 

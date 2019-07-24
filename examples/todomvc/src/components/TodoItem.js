@@ -30,6 +30,10 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo, completeTodo, deleteTodo } = this.props
+    const printDate = (dateStr) => {
+      const date = new Date(dateStr)
+      return date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes()
+    }
 
     let element
     if (this.state.editing) {
@@ -46,7 +50,7 @@ export default class TodoItem extends Component {
                  checked={todo.completed}
                  onChange={() => completeTodo(todo.id)} />
           <label onDoubleClick={this.handleDoubleClick}>
-            {todo.text}
+            {todo.text} - {printDate(todo.date)}
           </label>
           <button className="destroy"
                   onClick={() => deleteTodo(todo.id)} />
