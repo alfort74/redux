@@ -1,3 +1,5 @@
 export const SHOW_ALL = 'show_all'
 export const SHOW_COMPLETED = 'show_completed'
 export const SHOW_ACTIVE = 'show_active'
+export const DESCENT_ORDER = 'order_desc'
+export const ASCENT_ORDER = 'order_asc'
