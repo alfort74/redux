@@ -2,18 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FilterLink from '../containers/FilterLink'
 import OrderLink from '../containers/OrderLink'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE, DESCENT_ORDER, ASCENT_ORDER } from '../constants/filter'
+import { FILTER_TITLES, ORDER_TITLES } from '../constants/button'
 
-const FILTER_TITLES = {
-  [SHOW_ALL]: 'All',
-  [SHOW_ACTIVE]: 'Active',
-  [SHOW_COMPLETED]: 'Completed'
-}
-
-const ORDER_TITLES = {
-  [DESCENT_ORDER]: 'Desc',
-  [ASCENT_ORDER]: 'Asc'
-}
 
 const Footer = (props) => {
   const { activeCount, completedCount, onClearCompleted } = props
